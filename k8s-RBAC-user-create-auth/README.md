@@ -165,6 +165,25 @@ Error from server (Forbidden): User "system:serviceaccount:nginx-app:nginx-edit"
 
 Working! :)
 
+###Bearer Token
+Now we need to find token we can use to log in. Execute following command:
+
+```
+$kubectl -n nginx-app describe secret $(kubectl -n nginx-app get secret | grep nginx-edit | awk '{print $1}')
+Name:         nginx-edit-token-9z5lb
+Namespace:    nginx-app
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name=nginx-edit
+              kubernetes.io/service-account.uid=f2f33085-4c7c-11e8-8976-525400f90c61
+
+	      Type:  kubernetes.io/service-account-token
+
+	      Data
+	      ====
+	      ca.crt:     1025 bytes
+	      namespace:  9 bytes
+	      token:      eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJuZ2lueC1hcHAiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlY3JldC5uYW1lIjoibmdpbngtZWRpdC10b2tlbi05ejVsYiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJuZ2lueC1lZGl0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiZjJmMzMwODUtNGM3Yy0xMWU4LTg5NzYtNTI1NDAwZjkwYzYxIiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Om5naW54LWFwcDpuZ2lueC1lZGl0In0.Zt9naZq4SO7S2VghlBBEdH7bXfUtnchvsFZIpeBdEOmvjARb0QUeLCzrACnmfOwvAlnwYnZWA0_FDSFTbfdeaZ9nMUZ7OWER8bLwtUlAvAicGQ49sHOIcY8nCTq_2jqG1WPA9QsTnJU190O199oerXO15tuoQhc4BHsszfWxDSS7b1_K6fsqYRpP0cRqcVIPZ10InpPDbXPxw7SEWJzVaBjjfO_Yo1awdZFzAqfGVMv5HD6yad8UrjNb1v5Esg
+```	      
 
 ## Other Notes
 
