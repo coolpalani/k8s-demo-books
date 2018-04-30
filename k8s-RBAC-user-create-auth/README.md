@@ -135,7 +135,7 @@ KUBECONFIG=k8s-nginx-app-nginx-edit-conf kubectl get po
 ```
 KUBECONFIG=k8s-nginx-app-nginx-edit-conf kubectl get deploy
 ```
-
+```
 which should show you something like this:
 
 ```
