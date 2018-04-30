@@ -133,7 +133,7 @@ You should see `deployment "nginx-deployment" created`.  We can confirm it by qu
 ```
 KUBECONFIG=k8s-nginx-app-nginx-edit-conf kubectl get po
 ```
-```
+
 KUBECONFIG=k8s-nginx-app-nginx-edit-conf kubectl get deploy
 ```
 ```
