@@ -1,7 +1,7 @@
 ## Deploy Postgres on Kubernetes
 1. Deploy postgres with a persistent volume claim
    ```
-   kubectl create -f specs/postgres.yml
+   kubectl create -f postgres.yml
    ```
 
 2. Create a config map with the hostname of Postgres
