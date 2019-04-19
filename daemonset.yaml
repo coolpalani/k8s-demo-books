@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: nginx-daemon
+spec:
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx-daemon
+    spec:
+      containers:
+      - name: nginx-daemon
+        image: nginx
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "1"
+            memory: 196Mi
+          requests:
+            cpu: 100m
+            memory: 196Mi
+        ports:
+        - name: nginx-port
+          containerPort: 80
+          protocol: TCP
